@@ -54,9 +54,14 @@ export default function ToxicityCounter({ targetScore, color, label }: ToxicityC
   const strokeDashoffset = circumference - (displayScore / 100) * circumference;
 
   return (
-    <div ref={ref} className="flex flex-col items-center animate-score-pulse">
+    <div
+      ref={ref}
+      className="flex flex-col items-center animate-score-pulse"
+      role="img"
+      aria-label={`Toxicity score: ${displayScore} percent, ${label}`}
+    >
       <div className="relative w-56 h-56 md:w-72 md:h-72">
-        <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
+        <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90" aria-hidden="true">
           {/* Background circle */}
           <circle
             cx="100"
@@ -84,7 +89,7 @@ export default function ToxicityCounter({ targetScore, color, label }: ToxicityC
           />
         </svg>
         {/* Score in center */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center" aria-live="polite" aria-atomic="true">
           <span
             className="text-5xl md:text-7xl font-black tabular-nums"
             style={{

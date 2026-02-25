@@ -1,6 +1,6 @@
 export default function StatsBar() {
   return (
-    <div className="max-w-3xl mx-auto mt-12 px-4">
+    <section className="max-w-3xl mx-auto mt-12 px-4" aria-label="Site statistics">
       <div className="grid grid-cols-3 gap-4">
         <div className="glass-card p-4 text-center">
           <p
@@ -30,6 +30,6 @@ export default function StatsBar() {
           <p className="text-xs text-white/50 mt-1">Chaos Guaranteed</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -47,8 +47,9 @@ export default function RelatedCombos({ currentSign1, currentSign2 }: RelatedCom
   }
 
   return (
-    <div>
+    <section aria-labelledby="related-heading">
       <h3
+        id="related-heading"
         className="text-xl font-bold text-white text-center mb-5"
         style={{ fontFamily: "var(--font-space-grotesk)" }}
       >
@@ -78,6 +79,6 @@ export default function RelatedCombos({ currentSign1, currentSign2 }: RelatedCom
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

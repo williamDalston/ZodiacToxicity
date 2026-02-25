@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SIGN_SLUGS } from "@/lib/types";
 import { generateResult } from "@/lib/generate-result";
-import { SIGN_COLORS } from "@/lib/constants";
+import { SIGN_COLORS, SITE_URL } from "@/lib/constants";
 import StarField from "@/components/StarField";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -45,16 +45,20 @@ export async function generateMetadata({
   return {
     title: result.metaTitle,
     description: result.metaDescription,
+    alternates: {
+      canonical: `${SITE_URL}/${combo}`,
+    },
     openGraph: {
       title: result.metaTitle,
       description: result.metaDescription,
-      images: [`/og/${combo}.svg`],
+      url: `${SITE_URL}/${combo}`,
+      images: [`${SITE_URL}/og/${combo}.svg`],
     },
     twitter: {
       card: "summary_large_image",
       title: result.metaTitle,
       description: result.metaDescription,
-      images: [`/og/${combo}.svg`],
+      images: [`${SITE_URL}/og/${combo}.svg`],
     },
   };
 }
@@ -108,11 +112,12 @@ export default async function ResultPage({
     "@type": "Article",
     headline: result.metaTitle,
     description: result.metaDescription,
-    url: `https://zodiac-toxicity.com/${combo}`,
+    url: `${SITE_URL}/${combo}`,
     publisher: {
       "@type": "Organization",
       name: "ZodiacToxicity",
-      url: "https://zodiac-toxicity.com",
+      url: SITE_URL,
+      email: "info@alstonanalystics.com",
     },
     about: {
       "@type": "Thing",
@@ -131,7 +136,7 @@ export default async function ResultPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="relative z-10 px-4 py-6 md:py-12 max-w-3xl mx-auto">
+      <main id="main-content" className="relative z-10 px-4 py-6 md:py-12 max-w-3xl mx-auto">
         {/* Back link */}
         <Link
           href="/"

@@ -9,7 +9,7 @@ export default function NotFound() {
       <StarField />
       <Header />
 
-      <main className="relative z-10 flex flex-col items-center justify-center px-4 py-24 text-center">
+      <main id="main-content" className="relative z-10 flex flex-col items-center justify-center px-4 py-24 text-center">
         <span className="text-8xl md:text-9xl mb-6 animate-float">
           {"\uD83D\uDD2E"}
         </span>

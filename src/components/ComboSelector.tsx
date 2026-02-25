@@ -41,8 +41,10 @@ export default function ComboSelector({
 
       <div className="flex justify-center mt-8">
         <button
+          type="button"
           onClick={handleCalculate}
           disabled={!isReady}
+          aria-label={variant === "compact" ? "Check another combo" : "Calculate toxicity for selected signs"}
           className={`
             px-8 py-4 rounded-full text-lg font-bold transition-all duration-300
             ${

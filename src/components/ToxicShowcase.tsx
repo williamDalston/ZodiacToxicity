@@ -25,8 +25,9 @@ export default function ToxicShowcase() {
   });
 
   return (
-    <section className="max-w-4xl mx-auto mt-16 px-4 animate-slide-up">
+    <section className="max-w-4xl mx-auto mt-16 px-4 animate-slide-up" aria-labelledby="showcase-heading">
       <h3
+        id="showcase-heading"
         className="text-2xl md:text-3xl font-bold text-white text-center mb-2"
         style={{ fontFamily: "var(--font-space-grotesk)" }}
       >

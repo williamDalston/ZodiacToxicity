@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { SITE_URL } from "@/lib/constants";
 
 interface ShareButtonsProps {
   sign1Name: string;
@@ -18,13 +19,19 @@ export default function ShareButtons({
   combo,
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const [canShare, setCanShare] = useState(false);
 
-  const url = `https://zodiac-toxicity.com/${combo}`;
+  useEffect(() => {
+    setCanShare(typeof navigator !== "undefined" && !!navigator.share);
+  }, []);
+
+  const url = `${SITE_URL}/${combo}`;
   const text = `${sign1Name} + ${sign2Name} = ${score}% toxic (${scoreLabel}) \uD83D\uDD2E Check your combo:`;
 
   const shareTwitter = () => {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
-    window.open(twitterUrl, "_blank", "width=550,height=420");
+    const w = window.open(twitterUrl, "_blank", "width=550,height=420");
+    if (w) w.opener = null;
   };
 
   const copyLink = async () => {
@@ -33,15 +40,19 @@ export default function ShareButtons({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback for insecure contexts
-      const input = document.createElement("input");
-      input.value = url;
-      document.body.appendChild(input);
-      input.select();
-      document.execCommand("copy");
-      document.body.removeChild(input);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      const textarea = document.createElement("textarea");
+      textarea.value = url;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } finally {
+        document.body.removeChild(textarea);
+      }
     }
   };
 
@@ -54,14 +65,15 @@ export default function ShareButtons({
           url,
         });
       } catch {
-        // User cancelled or not supported
+        // User cancelled or error
       }
     }
   };
 
   return (
-    <div className="text-center">
+    <section className="text-center" aria-labelledby="share-heading">
       <h3
+        id="share-heading"
         className="text-xl md:text-2xl font-bold text-white mb-6"
         style={{ fontFamily: "var(--font-space-grotesk)" }}
       >
@@ -70,30 +82,38 @@ export default function ShareButtons({
 
       <div className="flex flex-wrap justify-center gap-3">
         <button
+          type="button"
           onClick={shareTwitter}
+          aria-label="Share on X (Twitter)"
           className="bg-black/50 border border-white/20 text-white px-5 py-3 rounded-full hover:bg-white/10 transition-colors text-sm font-semibold cursor-pointer"
         >
           Share on X
         </button>
 
         <button
+          type="button"
           onClick={copyLink}
+          aria-label={copied ? "Link copied" : "Copy link to clipboard"}
           className="bg-zodiac-accent text-white px-5 py-3 rounded-full hover:bg-purple-500 transition-colors text-sm font-semibold cursor-pointer"
         >
           {copied ? "Copied!" : "Copy Link"}
         </button>
 
-        <button
-          onClick={shareNative}
-          className="bg-zodiac-pink text-white px-5 py-3 rounded-full hover:bg-pink-500 transition-colors text-sm font-semibold cursor-pointer"
-        >
-          Share
-        </button>
+        {canShare && (
+          <button
+            type="button"
+            onClick={shareNative}
+            aria-label="Share using device share sheet"
+            className="bg-zodiac-pink text-white px-5 py-3 rounded-full hover:bg-pink-500 transition-colors text-sm font-semibold cursor-pointer"
+          >
+            Share
+          </button>
+        )}
       </div>
 
       <p className="text-zodiac-muted text-sm mt-4">
         Tag your {sign2Name} friend who needs to see this \uD83D\uDC40
       </p>
-    </div>
+    </section>
   );
 }

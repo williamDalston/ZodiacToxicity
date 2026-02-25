@@ -11,7 +11,7 @@ export default function Home() {
       <StarField />
       <Header />
 
-      <main className="relative z-10 px-4 py-8 md:py-16">
+      <main id="main-content" className="relative z-10 px-4 py-8 md:py-16">
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto mb-12 animate-slide-up">
           <h2

@@ -7,25 +7,25 @@ const AFFILIATE_CONTENT = {
     headline: "Understand your chart (and your terrible choices)",
     cta: "Try Co-Star Free",
     description: "Get daily horoscopes that explain why you're like this.",
-    url: "#costar-affiliate",
+    url: "https://www.costarastrology.com/",
   },
   betterhelp: {
     headline: "You might need to talk to someone",
     cta: "Try BetterHelp",
     description: "Because the stars can only do so much for this relationship.",
-    url: "#betterhelp-affiliate",
+    url: "https://www.betterhelp.com/",
   },
   "dating-app": {
     headline: "Maybe try someone with a different birthday",
     cta: "Download Hinge",
     description: "Designed to be deleted. Unlike this toxic pattern.",
-    url: "#dating-affiliate",
+    url: "https://hinge.co/",
   },
   "amazon-books": {
     headline: "Learn why you keep doing this to yourself",
     cta: "Shop Astrology Books",
     description: "Understanding your chart won't fix you, but at least you'll know why.",
-    url: "#amazon-affiliate",
+    url: "https://www.amazon.com/s?k=astrology+books",
   },
 };
 
@@ -46,6 +46,8 @@ export default function AffiliateCTA({ type }: AffiliateCTAProps) {
       <p className="text-sm text-gray-300 mb-4">{content.description}</p>
       <a
         href={content.url}
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-block bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm"
         data-affiliate-type={type}
       >

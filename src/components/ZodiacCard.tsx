@@ -22,7 +22,10 @@ export default function ZodiacCard({
 }: ZodiacCardProps) {
   return (
     <button
+      type="button"
       onClick={onClick}
+      aria-pressed={isSelected}
+      aria-label={`Select ${name}${dateRange ? ` (${dateRange})` : ""}`}
       className={cn(
         "relative flex flex-col items-center justify-center p-3 md:p-4 rounded-xl transition-all duration-200 cursor-pointer",
         "hover:scale-105 hover:bg-white/10",

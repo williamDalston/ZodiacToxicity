@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZodiacToxicity
 
-## Getting Started
+**How Toxic Are You Together?**
 
-First, run the development server:
+A fun, shareable web app that calculates "toxicity" scores for zodiac sign pairings. Pick two signs, get a hilarious breakdown of communication, jealousy, arguments, and more. 144 unique combos, all for entertainment.
+
+## Features
+
+- 144 zodiac compatibility combos (12 × 12)
+- Toxicity score with category breakdowns
+- Share on X, copy link, native share
+- Static export—deploy anywhere
+- SEO-ready: sitemap, robots.txt, OG images, JSON-LD
+
+## Tech Stack
+
+- Next.js 15 (App Router)
+- React 19
+- Tailwind CSS
+- TypeScript
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Outputs a static site to the `out/` directory. The site can be served by any static host (Vercel, Netlify, GitHub Pages, etc.).
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Vercel (recommended)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push to GitHub
+2. Import project at [vercel.com/new](https://vercel.com/new)
+3. Add your domain (e.g. zodiac-toxicity.com) in Project Settings
 
-## Deploy on Vercel
+### Other hosts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Upload the `out/` folder to any static hosting service after running `npm run build`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Configuration
+
+- **Site URL**: Edit `SITE_URL` in `src/lib/constants.ts` if your domain differs from `https://zodiac-toxicity.com`.
+
+## Contact
+
+info@alstonanalystics.com

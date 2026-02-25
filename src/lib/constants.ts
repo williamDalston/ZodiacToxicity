@@ -1,3 +1,5 @@
+export const SITE_URL = "https://zodiac-toxicity.com";
+
 export const ZODIAC_SIGNS = [
   { slug: "aries", name: "Aries", symbol: "\u2648", element: "Fire" },
   { slug: "taurus", name: "Taurus", symbol: "\u2649", element: "Earth" },

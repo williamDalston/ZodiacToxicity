@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import { SIGN_SLUGS } from "@/lib/types";
+import { SITE_URL } from "@/lib/constants";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://zodiac-toxicity.com";
+  const baseUrl = SITE_URL;
 
   const comboPages = SIGN_SLUGS.flatMap((s1) =>
     SIGN_SLUGS.map((s2) => ({
@@ -21,6 +22,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
     },
     ...comboPages,
   ];

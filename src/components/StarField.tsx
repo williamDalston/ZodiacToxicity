@@ -11,20 +11,28 @@ export default function StarField() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
     const stars = Array.from({ length: 200 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: 0,
+      y: 0,
       radius: Math.random() * 1.5 + 0.5,
       opacity: Math.random(),
       speed: Math.random() * 0.005 + 0.002,
     }));
+
+    const initStars = () => {
+      for (const star of stars) {
+        star.x = Math.random() * canvas.width;
+        star.y = Math.random() * canvas.height;
+      }
+    };
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initStars();
+    };
+    resize();
+    window.addEventListener("resize", resize);
 
     let animationId: number;
 
