@@ -1,0 +1,81 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29"/>
+      <stop offset="50%" style="stop-color:#302b63"/>
+      <stop offset="100%" style="stop-color:#24243e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Stars (decorative dots) -->
+  <circle cx="871" cy="487" r="0.6951788728679276" fill="white" opacity="0.6666604973316324"/>
+  <circle cx="158" cy="264" r="1.7214746960506158" fill="white" opacity="0.5240737550289074"/>
+  <circle cx="449" cy="150" r="1.7476205309981891" fill="white" opacity="0.5897896462832158"/>
+  <circle cx="498" cy="361" r="0.9937270298992089" fill="white" opacity="0.31364432284873855"/>
+  <circle cx="243" cy="356" r="1.6978839220395956" fill="white" opacity="0.4540035051300845"/>
+  <circle cx="765" cy="63" r="1.4838112200650604" fill="white" opacity="0.4483700847128488"/>
+  <circle cx="72" cy="78" r="0.620568695576315" fill="white" opacity="0.45624727416552135"/>
+  <circle cx="304" cy="241" r="0.8263443857274768" fill="white" opacity="0.34043270673245535"/>
+  <circle cx="658" cy="625" r="1.1036822947159641" fill="white" opacity="0.45696500462498607"/>
+  <circle cx="709" cy="103" r="1.1563032512372937" fill="white" opacity="0.7740813767348443"/>
+  <circle cx="411" cy="58" r="1.2661109138908213" fill="white" opacity="0.3108282903590839"/>
+  <circle cx="535" cy="307" r="1.5667615039072216" fill="white" opacity="0.7767086056730914"/>
+  <circle cx="31" cy="297" r="1.844609547584925" fill="white" opacity="0.35107709912894325"/>
+  <circle cx="401" cy="627" r="1.6620875165721523" fill="white" opacity="0.6863744131788949"/>
+  <circle cx="303" cy="109" r="0.9598992705062663" fill="white" opacity="0.3981194565300313"/>
+  <circle cx="1127" cy="613" r="0.6196750014130163" fill="white" opacity="0.6021860401184931"/>
+  <circle cx="632" cy="614" r="1.8999252739626311" fill="white" opacity="0.7367583861804469"/>
+  <circle cx="767" cy="350" r="1.696288981290597" fill="white" opacity="0.38411523179716195"/>
+  <circle cx="92" cy="428" r="1.2377989441281683" fill="white" opacity="0.6957737742587615"/>
+  <circle cx="677" cy="354" r="1.9003228443841482" fill="white" opacity="0.46827119680912477"/>
+  <circle cx="228" cy="21" r="0.9701757563467674" fill="white" opacity="0.7375464154673633"/>
+  <circle cx="676" cy="173" r="1.9917592092806278" fill="white" opacity="0.6972327381548302"/>
+  <circle cx="419" cy="595" r="1.0201516638345918" fill="white" opacity="0.6473605571215101"/>
+  <circle cx="992" cy="520" r="1.9467683369774302" fill="white" opacity="0.602414700323437"/>
+  <circle cx="494" cy="365" r="1.5106530161824152" fill="white" opacity="0.6616175358180385"/>
+  <circle cx="586" cy="519" r="1.7437872549790379" fill="white" opacity="0.35934560885755307"/>
+  <circle cx="731" cy="547" r="1.3879229111058518" fill="white" opacity="0.5541188474793124"/>
+  <circle cx="469" cy="445" r="0.9950895639200016" fill="white" opacity="0.6436181729811645"/>
+  <circle cx="1130" cy="256" r="0.5856126415542624" fill="white" opacity="0.3510214857935223"/>
+  <circle cx="796" cy="333" r="1.5745336290035594" fill="white" opacity="0.5465730493013595"/>
+  <circle cx="1081" cy="582" r="0.8990975567991597" fill="white" opacity="0.7791215876149007"/>
+  <circle cx="621" cy="494" r="0.7975173289918491" fill="white" opacity="0.7580260555506124"/>
+  <circle cx="965" cy="515" r="1.1861468693936148" fill="white" opacity="0.5919519659875043"/>
+  <circle cx="715" cy="238" r="0.8194036738958572" fill="white" opacity="0.6272751532686349"/>
+  <circle cx="712" cy="576" r="1.3028538193410673" fill="white" opacity="0.5191752835845753"/>
+  <circle cx="327" cy="348" r="0.8945081611577004" fill="white" opacity="0.5261646234774953"/>
+  <circle cx="1051" cy="564" r="1.4689086008073033" fill="white" opacity="0.3617166384333713"/>
+  <circle cx="311" cy="19" r="0.6088795078724147" fill="white" opacity="0.519196820036659"/>
+  <circle cx="856" cy="375" r="1.7138776568890703" fill="white" opacity="0.35779369428058516"/>
+  <circle cx="1119" cy="25" r="1.0830785385776127" fill="white" opacity="0.34325947165227344"/>
+
+  <!-- Sign 1 symbol -->
+  <text x="300" y="300" text-anchor="middle" font-size="140" fill="#B10DC9" filter="url(#glow)" font-family="serif">♋</text>
+  <text x="300" y="370" text-anchor="middle" font-size="32" fill="white" font-family="sans-serif" font-weight="bold">Cancer</text>
+
+  <!-- X between signs -->
+  <text x="600" y="290" text-anchor="middle" font-size="60" fill="#a78bfa" font-family="sans-serif">×</text>
+
+  <!-- Sign 2 symbol -->
+  <text x="900" y="300" text-anchor="middle" font-size="140" fill="#2ECC40" filter="url(#glow)" font-family="serif">♉</text>
+  <text x="900" y="370" text-anchor="middle" font-size="32" fill="white" font-family="sans-serif" font-weight="bold">Taurus</text>
+
+  <!-- Score -->
+  <text x="600" y="480" text-anchor="middle" font-size="80" fill="#F97316" font-family="sans-serif" font-weight="900" filter="url(#glow)">79%</text>
+
+  <!-- Tier label -->
+  <text x="600" y="530" text-anchor="middle" font-size="24" fill="#F97316" font-family="sans-serif" font-weight="bold" letter-spacing="6">VOLATILE</text>
+
+  <!-- Branding -->
+  <text x="600" y="600" text-anchor="middle" font-size="18" fill="#a78bfa" font-family="sans-serif" opacity="0.6">zodiac-toxicity.com</text>
+</svg>

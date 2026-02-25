@@ -1,0 +1,101 @@
+{
+  "communicationToxicity": {
+    "label": "Communication Toxicity",
+    "icon": "megaphone",
+    "traitKey": "communicationStyle",
+    "weight": 0.18,
+    "templates": [
+      "{SIGN1_NAME} communicates by {SIGN1_TRAIT}, while {SIGN2_NAME} prefers {SIGN2_TRAIT}. This is not a conversation. This is a hostage negotiation.",
+      "When conflict arises, {SIGN1_NAME} will be {SIGN1_TRAIT} and {SIGN2_NAME} will counter by {SIGN2_TRAIT}. Somewhere, a therapist just felt a disturbance in the force.",
+      "Picture this: {SIGN1_NAME} is {SIGN1_TRAIT}. {SIGN2_NAME} responds by {SIGN2_TRAIT}. The neighbors are concerned. The dog has left.",
+      "The {SIGN1_NAME}-{SIGN2_NAME} communication style can best be described as 'two people having entirely different arguments in the same room.'",
+      "{SIGN1_NAME} thinks talking louder means they're more right. {SIGN2_NAME} thinks {SIGN2_TRAIT} is a valid response. Neither of them is correct.",
+      "In couples therapy, {SIGN1_NAME} will spend the hour {SIGN1_TRAIT} while {SIGN2_NAME} is busy {SIGN2_TRAIT}. The therapist will need their own therapist.",
+      "Studies show that {SIGN1_NAME} and {SIGN2_NAME} have a communication compatibility of 'screaming into the void.' The void declined to comment."
+    ]
+  },
+  "jealousyPotential": {
+    "label": "Jealousy Potential",
+    "icon": "eye",
+    "traitKey": "jealousyTrigger",
+    "weight": 0.15,
+    "templates": [
+      "{SIGN1_NAME} gets jealous when {SIGN1_TRAIT}. {SIGN2_NAME} gets jealous when {SIGN2_TRAIT}. This relationship has the trust level of a Cold War spy exchange.",
+      "The jealousy in this pairing is a two-way street that's also on fire. {SIGN1_NAME} will lose it because {SIGN1_TRAIT}, and {SIGN2_NAME} will retaliate because {SIGN2_TRAIT}.",
+      "{SIGN1_NAME} checked your phone. {SIGN2_NAME} checked your phone's phone. Welcome to the trust Olympics, where everyone loses.",
+      "On a scale of 'chill' to 'hired a private investigator,' this combo sits at '{SIGN1_NAME} saw you smile at a barista.' {SIGN2_NAME} has already composed a breakup playlist.",
+      "{SIGN1_NAME}'s jealousy is triggered when {SIGN1_TRAIT}. Meanwhile, {SIGN2_NAME} spirals because {SIGN2_TRAIT}. This is not a relationship, it's mutual surveillance.",
+      "Trust exercises are pointless here. {SIGN1_NAME} will fall backward and {SIGN2_NAME} will be too busy being jealous that {SIGN2_TRAIT} to catch them."
+    ]
+  },
+  "argumentStyle": {
+    "label": "Argument Style",
+    "icon": "swords",
+    "traitKey": "argumentWeapon",
+    "weight": 0.17,
+    "templates": [
+      "{SIGN1_NAME}'s go-to argument weapon is {SIGN1_TRAIT}. {SIGN2_NAME} fights back with {SIGN2_TRAIT}. Geneva Convention violations have been reported.",
+      "Arguments between {SIGN1_NAME} and {SIGN2_NAME} are less 'civil discourse' and more 'emotional gladiator combat.' {SIGN1_NAME} opens with {SIGN1_TRAIT} and {SIGN2_NAME} counters with {SIGN2_TRAIT}.",
+      "When {SIGN1_NAME} and {SIGN2_NAME} fight, {SIGN1_NAME} deploys {SIGN1_TRAIT} while {SIGN2_NAME} unleashes {SIGN2_TRAIT}. The UN has been notified.",
+      "This pair doesn't have arguments. They have cinematic showdowns. {SIGN1_NAME} brings {SIGN1_TRAIT}. {SIGN2_NAME} arrives with {SIGN2_TRAIT}. There are no winners, only survivors.",
+      "Their argument style is best described as 'mutually assured emotional destruction.' {SIGN1_NAME} goes nuclear with {SIGN1_TRAIT} and {SIGN2_NAME} responds in kind with {SIGN2_TRAIT}.",
+      "A {SIGN1_NAME} vs {SIGN2_NAME} argument has the emotional complexity of a soap opera and the resolution speed of a government shutdown."
+    ]
+  },
+  "textMessageChaos": {
+    "label": "Text Message Chaos",
+    "icon": "phone",
+    "traitKey": "textStyle",
+    "weight": 0.12,
+    "templates": [
+      "{SIGN1_NAME}'s texting style: {SIGN1_TRAIT}. {SIGN2_NAME}'s texting style: {SIGN2_TRAIT}. Their chat history should be submitted as evidence.",
+      "If you opened the {SIGN1_NAME}-{SIGN2_NAME} group chat, you'd find {SIGN1_NAME} {SIGN1_TRAIT} while {SIGN2_NAME} is {SIGN2_TRAIT}. This is a war crime in iMessage form.",
+      "Their text thread reads like a psychological thriller. {SIGN1_NAME} is {SIGN1_TRAIT} and {SIGN2_NAME} is {SIGN2_TRAIT}. No one is winning. Everyone is typing.",
+      "{SIGN1_NAME} will be {SIGN1_TRAIT} at 2am. {SIGN2_NAME} will be {SIGN2_TRAIT} at 2:01am. By 2:15am, someone has been blocked, unblocked, and blocked again.",
+      "Their iCloud storage is 90% screenshots of each other's texts, saved as ammunition. {SIGN1_NAME} is known for {SIGN1_TRAIT} while {SIGN2_NAME} specializes in {SIGN2_TRAIT}.",
+      "A forensic analysis of their texts would be a bestselling book. Chapter 1: {SIGN1_NAME} {SIGN1_TRAIT}. Chapter 2: {SIGN2_NAME} {SIGN2_TRAIT}. Chapter 3: Mutual Destruction."
+    ]
+  },
+  "longTermForecast": {
+    "label": "Long-Term Forecast",
+    "icon": "crystal-ball",
+    "traitKey": "longTermOutlook",
+    "weight": 0.15,
+    "templates": [
+      "Long-term outlook: {SIGN1_NAME} {SIGN1_TRAIT}. {SIGN2_NAME} {SIGN2_TRAIT}. The five-year plan is more of a five-minute plan at this rate.",
+      "In 10 years, {SIGN1_NAME} and {SIGN2_NAME} will either be insufferably in love or featured on a true crime podcast. There is no middle ground.",
+      "The long-term forecast for {SIGN1_NAME} and {SIGN2_NAME} is 'catastrophically entertaining.' {SIGN1_NAME} {SIGN1_TRAIT} while {SIGN2_NAME} {SIGN2_TRAIT}.",
+      "Marriage counselors have a special rate for {SIGN1_NAME}-{SIGN2_NAME} couples. It's called the 'frequent flyer' program.",
+      "The future of this relationship looks like a choose-your-own-adventure book where every page ends in chaos. {SIGN1_NAME} {SIGN1_TRAIT} and {SIGN2_NAME} {SIGN2_TRAIT}.",
+      "Statistically, {SIGN1_NAME}-{SIGN2_NAME} couples either last forever out of pure spite or implode spectacularly within six months. We made up this statistic but it feels right."
+    ]
+  },
+  "breakupMethod": {
+    "label": "Breakup Method",
+    "icon": "broken-heart",
+    "traitKey": "breakupMethod",
+    "weight": 0.11,
+    "templates": [
+      "If this ends (when this ends), {SIGN1_NAME} will handle it by {SIGN1_TRAIT}. {SIGN2_NAME} will respond by {SIGN2_TRAIT}. Netflix is already optioning the rights.",
+      "The {SIGN1_NAME} breakup playbook: {SIGN1_TRAIT}. The {SIGN2_NAME} counter-move: {SIGN2_TRAIT}. This is a breakup, not a chess match. Wait, no, it's both.",
+      "When {SIGN1_NAME} and {SIGN2_NAME} break up, it's not a breakup. It's a season finale. {SIGN1_NAME} goes out by {SIGN1_TRAIT} and {SIGN2_NAME} responds by {SIGN2_TRAIT}.",
+      "Post-breakup, {SIGN1_NAME} will be {SIGN1_TRAIT} while {SIGN2_NAME} will be {SIGN2_TRAIT}. Their mutual friends will need to pick sides, and nobody wants to.",
+      "The breakup will be legendary. {SIGN1_NAME}: {SIGN1_TRAIT}. {SIGN2_NAME}: {SIGN2_TRAIT}. Everyone's picking sides. The group chat has been split into factions.",
+      "Odds of a clean breakup: 0%. {SIGN1_NAME} will be {SIGN1_TRAIT} and {SIGN2_NAME} will be {SIGN2_TRAIT}. There will be collateral damage."
+    ]
+  },
+  "restaurantDecision": {
+    "label": "Restaurant Decision",
+    "icon": "utensils",
+    "traitKey": "restaurantBehavior",
+    "weight": 0.12,
+    "templates": [
+      "Trying to pick a restaurant with a {SIGN1_NAME} and {SIGN2_NAME} is an extreme sport. {SIGN1_NAME} will be {SIGN1_TRAIT} while {SIGN2_NAME} will be {SIGN2_TRAIT}. You will both starve.",
+      "Date night dinner plan: {SIGN1_NAME} is {SIGN1_TRAIT}. {SIGN2_NAME} is {SIGN2_TRAIT}. It's been 3 hours. Nobody has eaten. Love is dead.",
+      "The restaurant saga: {SIGN1_NAME} handles dining by {SIGN1_TRAIT}. {SIGN2_NAME} contributes by {SIGN2_TRAIT}. Uber Eats has entered the chat for the third time this week.",
+      "This couple's Yelp history is a crime scene. {SIGN1_NAME}: {SIGN1_TRAIT}. {SIGN2_NAME}: {SIGN2_TRAIT}. They've been banned from two Olive Gardens.",
+      "A simple 'where do you want to eat?' with {SIGN1_NAME} and {SIGN2_NAME} becomes a 90-minute negotiation. {SIGN1_NAME} is {SIGN1_TRAIT} and {SIGN2_NAME} is {SIGN2_TRAIT}. Domino's wins again.",
+      "Food compatibility: nonexistent. {SIGN1_NAME} is {SIGN1_TRAIT} while {SIGN2_NAME} is {SIGN2_TRAIT}. They'll end up in a parking lot eating gas station sushi out of spite."
+    ]
+  }
+}

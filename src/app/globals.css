@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0f0c29;
+  --bg-secondary: #302b63;
+  --bg-tertiary: #24243e;
+  --text-primary: #f0e6ff;
+  --text-secondary: #a78bfa;
+  --accent-purple: #8b5cf6;
+  --accent-pink: #ec4899;
+  --score-yellow: #eab308;
+  --score-orange: #f97316;
+  --score-red: #ef4444;
+  --score-purple: #a855f7;
+}
+
+@theme inline {
+  --color-zodiac-bg: #0f0c29;
+  --color-zodiac-bg-mid: #302b63;
+  --color-zodiac-bg-dark: #24243e;
+  --color-zodiac-text: #f0e6ff;
+  --color-zodiac-muted: #a78bfa;
+  --color-zodiac-accent: #8b5cf6;
+  --color-zodiac-pink: #ec4899;
+  --color-score-yellow: #eab308;
+  --color-score-orange: #f97316;
+  --color-score-red: #ef4444;
+  --color-score-purple: #a855f7;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up-delay {
+  0%, 30% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes score-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out both;
+}
+
+.animate-slide-up-delay {
+  animation: slide-up-delay 1s ease-out both;
+}
+
+.animate-score-pulse {
+  animation: score-pulse 3s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0c29;
+}
+::-webkit-scrollbar-thumb {
+  background: #302b63;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
