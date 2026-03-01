@@ -33,21 +33,20 @@ export default function AffiliateCTA({ type }: AffiliateCTAProps) {
   const content = AFFILIATE_CONTENT[type];
 
   return (
-    <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-2xl p-6 border border-purple-500/20 my-6">
+    <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-2xl p-6 border border-purple-500/20 my-4">
       <p className="text-xs text-purple-300 uppercase tracking-wider mb-2">
         Sponsored
       </p>
       <h4
-        className="text-lg font-bold text-white mb-2"
-        style={{ fontFamily: "var(--font-space-grotesk)" }}
+        className="text-lg font-bold text-white mb-2 font-display"
       >
         {content.headline}
       </h4>
-      <p className="text-sm text-gray-300 mb-4">{content.description}</p>
+      <p className="text-sm text-white/70 mb-4">{content.description}</p>
       <a
         href={content.url}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="nofollow sponsored noopener noreferrer"
         className="inline-block bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm"
         data-affiliate-type={type}
       >

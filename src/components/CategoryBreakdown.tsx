@@ -21,8 +21,7 @@ export default function CategoryBreakdown({ category, index }: CategoryBreakdown
             {CATEGORY_EMOJIS[category.icon] || "\u2728"}
           </span>
           <h3
-            className="text-base md:text-lg font-semibold text-white"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
+            className="text-base md:text-lg font-semibold text-white font-display"
           >
             {category.label}
           </h3>
@@ -48,7 +47,7 @@ export default function CategoryBreakdown({ category, index }: CategoryBreakdown
       </div>
 
       {/* Description */}
-      <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+      <p className="text-sm md:text-base text-white/70 leading-relaxed break-words">
         {category.description}
       </p>
     </div>

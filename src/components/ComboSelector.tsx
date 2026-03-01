@@ -30,7 +30,7 @@ export default function ComboSelector({
   return (
     <div className={variant === "compact" ? "" : "animate-slide-up-delay"}>
       <div
-        className={`flex flex-col ${variant === "full" ? "lg:flex-row" : "md:flex-row"} gap-6 md:gap-10 justify-center items-start`}
+        className={`flex flex-col ${variant === "full" ? "lg:flex-row" : "md:flex-row"} gap-6 md:gap-10 justify-center items-center lg:items-start`}
       >
         <ZodiacGrid label="Your Sign" selected={sign1} onSelect={setSign1} />
         <div className="hidden lg:flex items-center self-center pt-10">
@@ -50,10 +50,9 @@ export default function ComboSelector({
             ${
               isReady
                 ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white animate-pulse-glow cursor-pointer"
-                : "bg-white/10 text-white/30 cursor-not-allowed"
+                : "bg-white/10 text-white/50 cursor-not-allowed"
             }
           `}
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
           {variant === "compact" ? "Check Another Combo" : "Calculate Our Toxicity"}
         </button>

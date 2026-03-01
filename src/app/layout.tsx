@@ -5,6 +5,7 @@ import "./globals.css";
 
 export const viewport: Viewport = {
   themeColor: "#0f0c29",
+  viewportFit: "cover",
 };
 
 const spaceGrotesk = Space_Grotesk({

@@ -9,6 +9,7 @@ interface ShareButtonsProps {
   score: number;
   scoreLabel: string;
   combo: string;
+  variant?: "full" | "compact";
 }
 
 export default function ShareButtons({
@@ -17,6 +18,7 @@ export default function ShareButtons({
   score,
   scoreLabel,
   combo,
+  variant = "full",
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const [canShare, setCanShare] = useState(false);
@@ -70,12 +72,39 @@ export default function ShareButtons({
     }
   };
 
+  // Compact variant: just Copy Link + Native Share (Twitter is rendered server-side above)
+  if (variant === "compact") {
+    return (
+      <>
+        <button
+          type="button"
+          onClick={copyLink}
+          aria-label={copied ? "Link copied" : "Copy link to clipboard"}
+          className="bg-zodiac-accent text-white px-5 py-2.5 rounded-full hover:bg-purple-500 transition-colors text-sm font-semibold cursor-pointer"
+        >
+          {copied ? "Copied!" : "Copy Link"}
+        </button>
+
+        {canShare && (
+          <button
+            type="button"
+            onClick={shareNative}
+            aria-label="Share using device share sheet"
+            className="bg-zodiac-pink text-white px-5 py-2.5 rounded-full hover:bg-pink-500 transition-colors text-sm font-semibold cursor-pointer"
+          >
+            Share
+          </button>
+        )}
+      </>
+    );
+  }
+
+  // Full variant: heading + all buttons + tagline
   return (
     <section className="text-center" aria-labelledby="share-heading">
       <h3
         id="share-heading"
-        className="text-xl md:text-2xl font-bold text-white mb-6"
-        style={{ fontFamily: "var(--font-space-grotesk)" }}
+        className="text-xl md:text-2xl font-bold text-white mb-6 font-display"
       >
         Share Your Toxicity Score
       </h3>
@@ -112,7 +141,7 @@ export default function ShareButtons({
       </div>
 
       <p className="text-zodiac-muted text-sm mt-4">
-        Tag your {sign2Name} friend who needs to see this \uD83D\uDC40
+        Tag your {sign2Name} friend who needs to see this {"\uD83D\uDC40"}
       </p>
     </section>
   );

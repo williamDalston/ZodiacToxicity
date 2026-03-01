@@ -50,8 +50,7 @@ export default function RelatedCombos({ currentSign1, currentSign2 }: RelatedCom
     <section aria-labelledby="related-heading">
       <h3
         id="related-heading"
-        className="text-xl font-bold text-white text-center mb-5"
-        style={{ fontFamily: "var(--font-space-grotesk)" }}
+        className="text-xl font-bold text-white text-center mb-5 font-display"
       >
         Related Combos
       </h3>
@@ -67,7 +66,7 @@ export default function RelatedCombos({ currentSign1, currentSign2 }: RelatedCom
               <span className="text-xs text-zodiac-muted">&times;</span>
               <span className="text-2xl">{combo.sign2Symbol}</span>
             </div>
-            <p className="text-xs text-white/70 mb-1">
+            <p className="text-xs text-white/80 mb-1">
               {combo.sign1Name} &amp; {combo.sign2Name}
             </p>
             <span

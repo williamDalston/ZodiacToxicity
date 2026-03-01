@@ -91,10 +91,9 @@ export default function ToxicityCounter({ targetScore, color, label }: ToxicityC
         {/* Score in center */}
         <div className="absolute inset-0 flex flex-col items-center justify-center" aria-live="polite" aria-atomic="true">
           <span
-            className="text-5xl md:text-7xl font-black tabular-nums"
+            className="text-5xl md:text-7xl font-black tabular-nums font-display"
             style={{
               color,
-              fontFamily: "var(--font-space-grotesk)",
               textShadow: `0 0 30px ${color}60`,
             }}
           >
@@ -103,10 +102,9 @@ export default function ToxicityCounter({ targetScore, color, label }: ToxicityC
         </div>
       </div>
       <span
-        className="text-xl md:text-2xl font-bold mt-4 uppercase tracking-[0.2em]"
+        className="text-xl md:text-2xl font-bold mt-4 uppercase tracking-[0.2em] font-display"
         style={{
           color,
-          fontFamily: "var(--font-space-grotesk)",
           textShadow: `0 0 20px ${color}40`,
         }}
       >

@@ -3,23 +3,20 @@ interface AdPlaceholderProps {
   format: "banner" | "rectangle" | "leaderboard";
 }
 
-const dimensions: Record<string, string> = {
-  banner: "w-full h-[90px]",
-  rectangle: "w-[300px] h-[250px]",
-  leaderboard: "w-full h-[90px] max-w-[728px]",
-};
-
+/**
+ * Ad placeholder — renders nothing until AdSense is configured.
+ * When ready, replace the return with actual AdSense <ins> tags.
+ *
+ * To enable: set NEXT_PUBLIC_ADSENSE_ID in env, then swap in AdSense markup.
+ */
 export default function AdPlaceholder({ slot, format }: AdPlaceholderProps) {
+  // Hidden until AdSense is integrated — keeps the slot data for future use
   return (
     <div
-      className={`${dimensions[format]} mx-auto my-8 flex items-center justify-center rounded-lg border border-dashed border-white/20 bg-white/5`}
+      className="hidden"
       data-ad-slot={slot}
       data-ad-format={format}
-      aria-label="Advertisement"
-    >
-      <span className="text-xs text-white/30 uppercase tracking-wider">
-        Ad Placement
-      </span>
-    </div>
+      aria-hidden="true"
+    />
   );
 }

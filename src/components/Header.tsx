@@ -5,8 +5,7 @@ export default function Header() {
     <header className="relative z-10 py-6 px-4 text-center">
       <Link href="/" className="inline-block" aria-label="ZodiacToxicity - Home">
         <h1
-          className="text-2xl md:text-3xl font-bold tracking-tight text-glow"
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
+          className="text-2xl md:text-3xl font-bold tracking-tight text-glow font-display"
         >
           <span className="text-zodiac-accent">Zodiac</span>
           <span className="text-zodiac-pink">Toxicity</span>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/constants";
 import StarField from "@/components/StarField";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,6 +8,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms of service for ZodiacToxicity. Rules for using our site.",
+  alternates: {
+    canonical: `${SITE_URL}/terms`,
+  },
 };
 
 export default function TermsPage() {
@@ -18,20 +22,19 @@ export default function TermsPage() {
       <main id="main-content" className="relative z-10 px-4 py-12 max-w-3xl mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-zodiac-muted hover:text-white transition-colors mb-8 text-sm"
+          className="inline-flex items-center gap-2 text-zodiac-muted hover:text-white transition-colors mb-8 text-sm py-2 pr-3"
         >
           &larr; Back to ZodiacToxicity
         </Link>
 
         <h1
-          className="text-3xl md:text-4xl font-bold text-white mb-8"
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
+          className="text-3xl md:text-4xl font-bold text-white mb-8 font-display"
         >
           Terms of Service
         </h1>
 
         <div className="glass-card p-6 md:p-8 space-y-6 text-white/80 text-sm leading-relaxed">
-          <p className="text-white/60 text-xs">Last updated: February 2025</p>
+          <p className="text-white/60 text-xs">Last updated: February 2026</p>
 
           <section>
             <h2 className="text-lg font-semibold text-white mb-2">

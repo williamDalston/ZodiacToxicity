@@ -1,15 +1,13 @@
 /**
  * OG Image Generator
- * Generates 144 social sharing images (1200x630) as SVG files.
+ * Generates 144 social sharing images (1200x630) as PNG files.
  *
  * Run: npx tsx scripts/generate-og-images.ts
- *
- * For PNG conversion, install sharp: npm i -D sharp
- * Then uncomment the sharp conversion section below.
  */
 
 import * as fs from "fs";
 import * as path from "path";
+import sharp from "sharp";
 
 // Import data directly (we can't use @ alias in scripts)
 const signsData = JSON.parse(
@@ -78,6 +76,18 @@ function getTier(score: number): { label: string; color: string } {
   return { label: "CONCERNING", color: "#EAB308" };
 }
 
+// Use seeded RNG for star positions so images are deterministic across builds
+function generateStars(seed: number): string {
+  const rng = seededRandom(seed);
+  return Array.from({ length: 40 }, () => {
+    const x = Math.floor(rng() * 1200);
+    const y = Math.floor(rng() * 630);
+    const r = rng() * 1.5 + 0.5;
+    const o = rng() * 0.5 + 0.3;
+    return `<circle cx="${x}" cy="${y}" r="${r}" fill="white" opacity="${o}"/>`;
+  }).join("\n  ");
+}
+
 function generateSvg(s1: string, s2: string): string {
   const sign1 = signsData[s1];
   const sign2 = signsData[s2];
@@ -104,13 +114,7 @@ function generateSvg(s1: string, s2: string): string {
   <rect width="1200" height="630" fill="url(#bg)"/>
 
   <!-- Stars (decorative dots) -->
-  ${Array.from({ length: 40 }, () => {
-    const x = Math.floor(Math.random() * 1200);
-    const y = Math.floor(Math.random() * 630);
-    const r = Math.random() * 1.5 + 0.5;
-    const o = Math.random() * 0.5 + 0.3;
-    return `<circle cx="${x}" cy="${y}" r="${r}" fill="white" opacity="${o}"/>`;
-  }).join("\n  ")}
+  ${generateStars(hashCombo(s1, s2) + 999)}
 
   <!-- Sign 1 symbol -->
   <text x="300" y="300" text-anchor="middle" font-size="140" fill="${sign1.color}" filter="url(#glow)" font-family="serif">${sign1.symbol}</text>
@@ -135,38 +139,34 @@ function generateSvg(s1: string, s2: string): string {
 }
 
 // Main
-const OUTPUT_DIR = path.join(__dirname, "..", "public", "og");
-if (!fs.existsSync(OUTPUT_DIR)) {
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-}
-
-let count = 0;
-for (const s1 of SIGN_SLUGS) {
-  for (const s2 of SIGN_SLUGS) {
-    const svg = generateSvg(s1, s2);
-    const filename = `${s1}-${s2}.svg`;
-    fs.writeFileSync(path.join(OUTPUT_DIR, filename), svg);
-    count++;
+async function main() {
+  const OUTPUT_DIR = path.join(__dirname, "..", "public", "og");
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
-}
 
-console.log(`Generated ${count} OG images in ${OUTPUT_DIR}`);
-
-// Optional: Convert SVGs to PNGs using sharp
-// Uncomment if sharp is installed: npm i -D sharp
-/*
-import sharp from "sharp";
-
-async function convertToPng() {
-  for (const s1 of SIGN_SLUGS) {
-    for (const s2 of SIGN_SLUGS) {
-      const svgPath = path.join(OUTPUT_DIR, `${s1}-${s2}.svg`);
-      const pngPath = path.join(OUTPUT_DIR, `${s1}-${s2}.png`);
-      await sharp(svgPath).png().toFile(pngPath);
-      fs.unlinkSync(svgPath);
+  // Clean old files
+  const existingFiles = fs.readdirSync(OUTPUT_DIR);
+  for (const file of existingFiles) {
+    if (file.endsWith(".svg") || file.endsWith(".png")) {
+      fs.unlinkSync(path.join(OUTPUT_DIR, file));
     }
   }
-  console.log("Converted all SVGs to PNGs");
+
+  let count = 0;
+  for (const s1 of SIGN_SLUGS) {
+    for (const s2 of SIGN_SLUGS) {
+      const svg = generateSvg(s1, s2);
+      const pngPath = path.join(OUTPUT_DIR, `${s1}-${s2}.png`);
+
+      // Convert SVG directly to PNG via sharp
+      await sharp(Buffer.from(svg)).png().toFile(pngPath);
+      count++;
+    }
+    console.log(`  ${s1}: 12 images done`);
+  }
+
+  console.log(`Generated ${count} PNG OG images in ${OUTPUT_DIR}`);
 }
-convertToPng();
-*/
+
+main().catch(console.error);

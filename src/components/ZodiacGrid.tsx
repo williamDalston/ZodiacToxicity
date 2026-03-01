@@ -16,12 +16,11 @@ export default function ZodiacGrid({ label, selected, onSelect }: ZodiacGridProp
   return (
     <div className="flex flex-col items-center">
       <h3
-        className="text-lg md:text-xl font-bold mb-4 text-zodiac-muted"
-        style={{ fontFamily: "var(--font-space-grotesk)" }}
+        className="text-lg md:text-xl font-bold mb-4 text-zodiac-muted font-display"
       >
         {label}
       </h3>
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-3">
+      <div className="grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-2 md:gap-3">
         {ZODIAC_SIGNS.map((sign) => (
           <ZodiacCard
             key={sign.slug}

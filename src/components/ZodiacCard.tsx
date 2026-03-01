@@ -27,7 +27,7 @@ export default function ZodiacCard({
       aria-pressed={isSelected}
       aria-label={`Select ${name}${dateRange ? ` (${dateRange})` : ""}`}
       className={cn(
-        "relative flex flex-col items-center justify-center p-3 md:p-4 rounded-xl transition-all duration-200 cursor-pointer",
+        "relative flex flex-col items-center justify-center p-2 sm:p-3 md:p-4 rounded-xl transition-all duration-200 cursor-pointer min-w-0",
         "hover:scale-105 hover:bg-white/10",
         isSelected
           ? "bg-white/15 scale-105"
@@ -38,11 +38,11 @@ export default function ZodiacCard({
         boxShadow: isSelected ? `0 0 20px ${color}40, 0 0 40px ${color}20, inset 0 0 0 2px ${color}` : undefined,
       }}
     >
-      <span className="text-3xl md:text-4xl mb-1" style={{ filter: isSelected ? `drop-shadow(0 0 8px ${color})` : undefined }}>
+      <span className="text-2xl sm:text-3xl md:text-4xl mb-1" style={{ filter: isSelected ? `drop-shadow(0 0 8px ${color})` : undefined }}>
         {symbol}
       </span>
-      <span className="text-xs md:text-sm font-semibold text-white">{name}</span>
-      <span className="text-[10px] text-white/40 mt-0.5 hidden md:block">{dateRange}</span>
+      <span className="text-[11px] sm:text-xs md:text-sm font-semibold text-white truncate max-w-full">{name}</span>
+      <span className="text-[10px] text-white/60 mt-0.5 hidden sm:block">{dateRange}</span>
       {isSelected && (
         <div
           className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white"

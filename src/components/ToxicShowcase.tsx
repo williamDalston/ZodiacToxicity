@@ -28,8 +28,7 @@ export default function ToxicShowcase() {
     <section className="max-w-4xl mx-auto mt-16 px-4 animate-slide-up" aria-labelledby="showcase-heading">
       <h3
         id="showcase-heading"
-        className="text-2xl md:text-3xl font-bold text-white text-center mb-2"
-        style={{ fontFamily: "var(--font-space-grotesk)" }}
+        className="text-2xl md:text-3xl font-bold text-white text-center mb-2 font-display"
       >
         Most Toxic Combos
       </h3>
@@ -67,8 +66,8 @@ export default function ToxicShowcase() {
               {combo.sign1.name} &amp; {combo.sign2.name}
             </p>
             <span
-              className="text-2xl font-black"
-              style={{ color: combo.color, fontFamily: "var(--font-space-grotesk)" }}
+              className="text-2xl font-black font-display"
+              style={{ color: combo.color }}
             >
               {combo.score}%
             </span>
@@ -78,9 +77,21 @@ export default function ToxicShowcase() {
             >
               {combo.label}
             </p>
+            <p className="text-xs text-zodiac-muted mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              See full breakdown &rarr;
+            </p>
           </Link>
         ))}
       </div>
+
+      <p className="text-center mt-8">
+        <Link
+          href="/#selector"
+          className="text-zodiac-accent hover:text-purple-400 text-sm font-semibold transition-colors"
+        >
+          Check your combo &rarr;
+        </Link>
+      </p>
     </section>
   );
 }

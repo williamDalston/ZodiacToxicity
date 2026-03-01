@@ -25,7 +25,7 @@ export const SIGN_COLORS: Record<string, string> = {
   libra: "#FF69B4",
   scorpio: "#85144B",
   sagittarius: "#F012BE",
-  capricorn: "#001F3F",
+  capricorn: "#3B82A0",
   aquarius: "#7FDBFF",
   pisces: "#0074D9",
 };
